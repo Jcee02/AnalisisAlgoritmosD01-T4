@@ -1,32 +1,36 @@
 import pandas as pd
 
-class Cadena:
-    def __init__(self, csv_file):
-        self.df = pd.read_csv(csv_file)
-        self.chunks = []
 
-    def dividir_cadena(self):
-        # Eliminar las filas con valores NaN en la columna "string_a_modificar"
-        self.df.dropna(subset=['string_a_modificar'], inplace=True)
+#create a method that takes a range (chunks of ten chars that go with a step of 5, 25 chunks in total) that does the exact same thing but only for that range
+#then create a method that takes a range (chunks of ten chars that go with a step of 5, 25 chunks in total) that does the exact same thing but only for that range
 
-        # Iterar sobre las filas restantes para dividir las cadenas
-        for _, row in self.df.iterrows():
-            string_a_dividir = str(row["string_a_modificar"])
 
-            for i in range(0, len(string_a_dividir) - 9, 5):
-                chunk = string_a_dividir[i:i + 10]
-                self.chunks.append(chunk)
+class DNAPermutations:
+    def __init__(self, file):
+        self.file = file
+        self.df = pd.read_csv(self.file)
+        self.string = self.df['string_a_modificar'][0]
+        self.alterations = self.df['alteracion']
+        self.positions = self.df['posicion']
+        self.permutations = []
+        self.permutations.append(self.string)
+        self.generate_permutations()
+        self.df_output = pd.DataFrame({'string_original': self.permutations, 'string_alterado': self.permutations, 'permutaciones': self.permutations})
+        self.df_output.to_csv('output.csv', index=False)
 
-            # Verificar si hay un chunk restante al final
-            if len(string_a_dividir) % 5 != 0:
-                chunk = string_a_dividir[-(len(string_a_dividir) % 5):]
-                self.chunks.append(chunk)
+    def generate_permutations(self):
+        for i in range(len(self.positions)):
+            for j in range(len(self.permutations)):
+                self.permutations.append(self.permutations[j][:self.positions[i]] + self.alterations[i] + self.permutations[j][self.positions[i]+1:])
+        self.permutations = self.permutations[1:]
 
-    def guardar_resultados(self, output_file):
-        df_resultado = pd.DataFrame(self.chunks, columns=['chunk'])
-        df_resultado.to_csv(output_file, index=False)
+    def generate_permutations_by_range(self, start, end):
+        for i in range(start, end):
+            for j in range(len(self.permutations)):
+                self.permutations.append(self.permutations[j][:self.positions[i]] + self.alterations[i] + self.permutations[j][self.positions[i]+1:])
+        self.permutations = self.permutations[1:]
+#Ejecutar el código con el archivo .csv como argumento
 
-# Uso de la clase
-divisor = Cadena("data/dataset.csv")
-divisor.dividir_cadena()
-divisor.guardar_resultados("result.csv")
+DNAPermutations('data/dataset.csv').generate_permutations_by_range(0, 5)
+
+
