@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>558</height>
+    <width>559</width>
+    <height>435</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);</string>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
+   <layout class="QVBoxLayout" name="verticalLayout_9">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -109,19 +109,6 @@ border-radius:20px;
            <number>0</number>
           </property>
           <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
              <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
@@ -146,7 +133,7 @@ color: white;</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_cerrar2">
+           <widget class="QPushButton" name="bt_minimizar">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -172,7 +159,7 @@ color: white;</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_minimizar">
+           <widget class="QPushButton" name="bt_restaurar">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -198,7 +185,7 @@ color: white;</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_maximixar">
+           <widget class="QPushButton" name="bt_maximizar">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -280,7 +267,7 @@ color: white;</string>
            <widget class="QFrame" name="frame_4">
             <property name="styleSheet">
              <string notr="true">QFrame{
-background-color: rgb(55, 53, 79);
+	background-color: rgb(0, 64, 94);
 }
 
 QPushButton{
@@ -314,7 +301,7 @@ background-color: black;
                  <widget class="QToolBox" name="toolBox">
                   <property name="styleSheet">
                    <string notr="true">QToolBox::tab{
-background-color: rgb(14, 140, 180);
+background-color: rgb(14, 140, 180, 30% );
 border-radius: 5px;
 color: rgb(255, 255, 255);
 font: 95 10pt &quot;Arial Black&quot;;
@@ -347,25 +334,29 @@ background-color: rgba( 255, 255, 255, 25% );
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>716</width>
-                     <height>360</height>
+                     <width>515</width>
+                     <height>225</height>
                     </rect>
                    </property>
+                   <attribute name="icon">
+                    <iconset>
+                     <normaloff>imagenes/opcion1.png</normaloff>imagenes/opcion1.png</iconset>
+                   </attribute>
                    <attribute name="label">
                     <string>Importar Tabla de Cadenas</string>
                    </attribute>
                    <layout class="QVBoxLayout" name="verticalLayout_4">
                     <item>
-                     <widget class="QPushButton" name="boton_abrir">
+                     <widget class="QPushButton" name="boton_abrirOP1">
                       <property name="text">
                        <string>Abrir Archivo</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="boton_mostrar">
+                     <widget class="QPushButton" name="boton_mostrarOP1">
                       <property name="text">
-                       <string>Mostrar Datos</string>
+                       <string>Mostrar Datos Cadena</string>
                       </property>
                      </widget>
                     </item>
@@ -416,16 +407,27 @@ border: 1px solid #ff000;
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>716</width>
-                     <height>360</height>
+                     <width>498</width>
+                     <height>233</height>
                     </rect>
                    </property>
+                   <attribute name="icon">
+                    <iconset>
+                     <normaloff>imagenes/opcion2.png</normaloff>imagenes/opcion2.png</iconset>
+                   </attribute>
                    <attribute name="label">
                     <string>Todas las combinaciones</string>
                    </attribute>
                    <layout class="QVBoxLayout" name="verticalLayout_7">
                     <item>
-                     <widget class="QPushButton" name="pushButton_12">
+                     <widget class="QPushButton" name="boton_abrirOP2">
+                      <property name="text">
+                       <string>Abrir Archivo</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="boton_TodasCombinaciones">
                       <property name="text">
                        <string>Hacer Combinaciones</string>
                       </property>
@@ -464,25 +466,25 @@ border: 1px solid #ff000;
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_3">
+                      <layout class="QVBoxLayout" name="verticalLayout_10">
                        <item>
                         <widget class="QTableWidget" name="tableWidget_2"/>
                        </item>
+                       <item>
+                        <widget class="QPushButton" name="boton_abrirResultOP2">
+                         <property name="text">
+                          <string>Abrir Resultado</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="boton_mostrarOP2">
+                         <property name="text">
+                          <string>Mostrar Combinaciones</string>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButton">
-                      <property name="text">
-                       <string>Abrir Archivo</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="boton_abrir_2">
-                      <property name="text">
-                       <string>Mostrar Combinaciones</string>
-                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -492,43 +494,101 @@ border: 1px solid #ff000;
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>716</width>
-                     <height>360</height>
+                     <width>498</width>
+                     <height>233</height>
                     </rect>
                    </property>
+                   <attribute name="icon">
+                    <iconset>
+                     <normaloff>imagenes/opcion3.png</normaloff>imagenes/opcion3.png</iconset>
+                   </attribute>
                    <attribute name="label">
                     <string>Combinaciones por Rangos</string>
                    </attribute>
-                   <widget class="QSpinBox" name="spinBox">
-                    <property name="geometry">
-                     <rect>
-                      <x>80</x>
-                      <y>90</y>
-                      <width>42</width>
-                      <height>22</height>
-                     </rect>
-                    </property>
-                   </widget>
-                   <widget class="QSpinBox" name="spinBox_2">
-                    <property name="geometry">
-                     <rect>
-                      <x>160</x>
-                      <y>90</y>
-                      <width>42</width>
-                      <height>22</height>
-                     </rect>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout">
+                    <item>
+                     <widget class="QPushButton" name="boton_abrirOP3">
+                      <property name="text">
+                       <string>Abrir Archivo</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="boton_CombinacionesRangos">
+                      <property name="text">
+                       <string>Hacer Combinaciones -Rangos-</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_6">
+                      <property name="styleSheet">
+                       <string notr="true">QWidget {
+background-color: rgba( 255, 255, 255, 35%);
+}
+
+QHeaderView::section {
+background-color: rgb(14, 140, 180);
+padding: 2px;
+
+border: 1px solid #fffff8; 
+font-size: 14pt;
+}
+
+ATableWidget{
+gridline-color: #aa00ff; 
+font-size: 12pt; 
+color: rgb(255, 255, 255);
+font: 95 10pt &quot;Arial Black&quot;;
+}
+
+QTableWidget QTableCornerButton::section{
+background-color: #646464;
+border: 1px solid #ff000;
+}</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_8">
+                       <item>
+                        <widget class="QTableWidget" name="tableWidget_3"/>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="boton_abrirResultOP3">
+                         <property name="text">
+                          <string>Abrir Resultado</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="boton_mostrarOP3">
+                         <property name="text">
+                          <string>Mostrar Combinaciones -Rangos-</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                   <widget class="QWidget" name="TuplasCombinacion">
                    <property name="geometry">
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>716</width>
-                     <height>360</height>
+                     <width>515</width>
+                     <height>225</height>
                     </rect>
                    </property>
+                   <attribute name="icon">
+                    <iconset>
+                     <normaloff>imagenes/tabla.png</normaloff>imagenes/tabla.png</iconset>
+                   </attribute>
                    <attribute name="label">
                     <string>Combinaciones por Tuplas</string>
                    </attribute>
